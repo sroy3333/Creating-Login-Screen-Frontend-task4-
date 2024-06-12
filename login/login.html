@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+    <h2>Chat App</h2>
     <form onsubmit="login(event)" method="POST">
         <label for="email">Enter email</label>
         <input type="email" id="email" name="email" required />
@@ -32,6 +33,7 @@
                 console.log(response.data)
                 localStorage.setItem('token', response.data.token)
                 localStorage.setItem('userDetails', JSON.stringify(response.data.user))
+                window.location.href = "../ChatApp/index.html"
 
             }).catch(err => {
                 console.log(JSON.stringify(err))
